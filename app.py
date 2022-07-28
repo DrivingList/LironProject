@@ -2,7 +2,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def hello():
-    return '<body style="background-color:yellow;"><h1 style="color:blue;">Liron webserver</h1><p style="color:blue;">cyberpunk 2077 color scheme</p></body>'
+def index():
+    return '<body style="background-color:Yellow;"><h1 style="color:Blue;">Ayra is fat and super gay</h1></body>'
+
+app.run(host='0.0.0.0', port=8081)
