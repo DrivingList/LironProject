@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: liron-project
+  namespace: health-check
+  labels: 
+    app: liron-project
+spec:
+  selector:
+    app: liron-project
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8081
+  type: LoadBalancer

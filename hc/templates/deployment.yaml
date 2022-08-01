@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: liron-project
+  namespace: health-check
+  labels:
+    app: liron-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: liron-project
+  template:
+    metadata:
+      labels:
+        app: liron-project
+    spec:
+      containers:
+      - name: liron-project-pod
+        image: 054789182582.dkr.ecr.eu-central-1.amazonaws.com/liron7833project
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8081
+          protocol: TCP 
+        resources:
+          requests: 
+            memory: "200Mi"
+            cpu: 0.5
+          limits:
+            memory: "400Mi"
+            cpu: 1.0
+      imagePullSecrets:
+      - name: regcred
