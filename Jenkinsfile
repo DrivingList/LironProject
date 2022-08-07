@@ -15,7 +15,6 @@ pipeline {
         }
         stage('build') {
             steps{
-                "
                 sh "docker build -t liron7833project:$BUILD_NUMBER ."
                 }
             }
