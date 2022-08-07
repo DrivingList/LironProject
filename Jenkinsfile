@@ -8,11 +8,7 @@ pipeline {
 	    cleanWs()
           }	
 	}
-	    stage('Git Checkout') {
-            steps {
-		    git branch: 'master', url: 'https://github.com/DrivingList/LironProject.git'
-            }
-        }
+	    
         stage('build') {
             steps{
                 sh "docker build -t liron7833project:$BUILD_NUMBER ."
